@@ -2,15 +2,14 @@
 # About
 
 # Developers
-Get requests (python http handler): 
-`pip install requests`
+- Install python http request library: `pip install requests`
+- Install matplotlib: `pip install matplotlib`
+- Set your environment variable for running on local machine. Name the environment variable `discordBot_token`
 
-Set your environment variable for running on local machine
-
-## Command Template
+### Command Template
 Every command should have the bare minimum for the main file to process it:
-myCommand.py
 ```py
+# myCommand.py
 class MyCommand:
     def __init__(self, names):
         self.names = names # list of command names ex: [tp, teleport]
