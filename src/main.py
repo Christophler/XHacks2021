@@ -5,6 +5,11 @@ import discord
 # Commands
 from commands.plotCommand import PlotCommand
 
+from api.alphaVantage import quotePrice
+
+quotePrice()
+
+
 # Importing the stay awake function
 # from stayWake.stay_awake import stay_awake
 # Ensures the bot runs 24/7
