@@ -16,9 +16,8 @@ def exchangeRates():
 
   print(data)
 
-
-def quotePrice():
-  url = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=U4FVM2VFYLRW4T31'
+def quotePrice(sym):
+  url = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol='+sym+'&apikey=U4FVM2VFYLRW4T31'
   r = requests.get(url)
   data = r.json()
 
