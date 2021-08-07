@@ -5,6 +5,7 @@ from settings import Settings
 
 # Commands
 from commands.plotCommand import PlotCommand
+from commands.testCommand import TestCommand
 
 from api.alphaVantage import quotePrice
 
@@ -19,9 +20,8 @@ quotePrice()
 # Setting the discord client variable
 bot = discord.Client()
 
-commands = [PlotCommand(['plot'])]
-
 settings = Settings()
+commands = [PlotCommand(['plot']), TestCommand(['test'], settings)]
 
 # Showing that the bot is ready
 

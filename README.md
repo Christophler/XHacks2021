@@ -20,3 +20,25 @@ class MyCommand:
     async def run(self, message): 
         pass # put code in here
 ```
+
+### Settings
+How to access the settings values (cached in the Settings object). Settings is first initialized in `main.py` and should be passed through functions if needed.
+```py
+# testCommand.py
+class TestCommand:
+    def __init__(self, names, settings): # pass in "settings" through the constructor
+        self.names = names
+        self.settings = settings
+        
+    def getNames(self):
+        return self.names
+        
+    async def run(self, message): 
+        msg = self.settings.getAttribute("ready_message") # use the "settings" object as needed
+        await message.channel.send(msg)
+
+# main.py
+from settings import Settings
+settings = Settings() # initialize settings
+commands = [PlotCommand(['plot']), TestCommand(['test'], settings)] # pass in settings into TestCommand(..,settings)
+```
