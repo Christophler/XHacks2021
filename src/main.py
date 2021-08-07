@@ -4,8 +4,8 @@ import discord
 
 
 # Importing the API request function
-from API.alphaVantage import timeSeriesDailyAdjusted
-from API.alphaVantage import exchangeRates
+from api.alphaVantage import timeSeriesDailyAdjusted
+from api.alphaVantage import exchangeRates
 exchangeRates()
 
 #importing the plotting functions
@@ -28,6 +28,7 @@ bot = discord.Client()
 @bot.event
 async def on_ready():
   await bot.get_channel(843616163010314260).send("I'm Here")
+  print("XHacks2021 is up and ready to roll out")
 
 
 # Whenever there's a message, this function runs
