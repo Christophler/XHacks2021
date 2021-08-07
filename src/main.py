@@ -47,5 +47,5 @@ async def on_message(message):
 
 # Running the bot
 # INSERT YOUR BOT TOKEN ID
-my_secret = os.environ['token']
+my_secret = os.environ['discordBot_token']
 bot.run(my_secret)
