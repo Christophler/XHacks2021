@@ -6,6 +6,7 @@ from settings import Settings
 # Commands
 from commands.plotCommand import PlotCommand
 from commands.testCommand import TestCommand
+from commands.helpCommand import HelpCommand
 
 # from api.alphaVantage import timeSeriesDailyAdjusted, quotePrice
 
@@ -18,7 +19,7 @@ from commands.testCommand import TestCommand
 bot = discord.Client()
 
 settings = Settings()
-commands = [PlotCommand(['plot'], settings), TestCommand(['test'], settings)]
+commands = [PlotCommand(['plot', 'stock'], settings), TestCommand(['test'], settings), HelpCommand(['help'], settings)]
 
 # Showing that the bot is ready
 
