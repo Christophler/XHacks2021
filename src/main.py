@@ -7,7 +7,7 @@ from settings import Settings
 from commands.plotCommand import PlotCommand
 from commands.testCommand import TestCommand
 
-from api.alphaVantage import timeSeriesDailyAdjusted, quotePrice
+# from api.alphaVantage import timeSeriesDailyAdjusted, quotePrice
 
 # Importing the stay awake function
 # from stayWake.stay_awake import stay_awake
@@ -41,15 +41,20 @@ async def on_message(message):
       return
     
     # Check if the message was a command
-    potentialCmdName = message.content.split(' ')[0][1::]
+    split = message.content.split(' ')
+    potentialCmdName = split[0][1::]
     
     done = False
     for cmd in commands:
       cmdNames = cmd.getNames()
       for cmdName in cmdNames:
         if(potentialCmdName == (cmdName)):
-          await cmd.run(message)
-          print("Command run: " + potentialCmdName)
+          args = []
+          if(len(split) > 1):
+            for i in range(1, len(split)):
+              args.append(split[i])
+          await cmd.run(message, args)
+          print("Command run: " + potentialCmdName + " " + str(args))
           done = True
           break
       if done:
