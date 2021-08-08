@@ -8,12 +8,11 @@ from commands.plotCommand import PlotCommand
 from commands.helpCommand import HelpCommand
 from commands.stocksCommand import StocksCommand
 
-# from api.alphaVantage import timeSeriesDailyAdjusted, quotePrice
 
 # Importing the stay awake function
-# from stayWake.stay_awake import stay_awake
+from stayAwake.stay_awake import stay_awake
 # Ensures the bot runs 24/7
-# stay_awake()
+stay_awake()
 
 # Setting the discord client variable
 bot = discord.Client()
@@ -22,8 +21,6 @@ settings = Settings()
 commands = [PlotCommand(['plot', 'stock'], settings), HelpCommand(['help'], settings), StocksCommand(['stocks'], settings)]
 
 # Showing that the bot is ready
-
-
 @bot.event
 async def on_ready():
     await bot.get_channel(settings.getAttribute("announce_channel_id")).send(settings.getAttribute("ready_message"))
@@ -62,6 +59,5 @@ async def on_message(message):
         break
 
 # Running the bot
-# INSERT YOUR BOT TOKEN ID
 my_secret = os.environ['discordBot_token']
 bot.run(my_secret)
