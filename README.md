@@ -3,7 +3,7 @@
 MoneyMoneyStocksBot is a discord bot that lets users view recent stock data on a number of select stocks available. It neatly puts the data in a graph to see the stock's progress over the past 7 days. All with one bot and one command, you and your friends can view the stock market with ease.
 
 # Instructions
-1. Get the bot on your discord server: https://tinyurl.com/stockbot123xhacks 
+1. Get the bot on your discord server: https://tinyurl.com/moneymoneystocksbot 
 2. Type `;help` to view the commands
 3. Type `;stocks` to view the stocks you can preview
 4. Type `;stock <name>` to view stock information
