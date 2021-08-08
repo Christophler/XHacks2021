@@ -8,3 +8,17 @@ def timeSeriesDailyAdjusted(sym):
 
   # print(data)
   return data
+
+def getPoints(numPoints, stockName):
+  json = timeSeriesDailyAdjusted(stockName)
+  dayData = json['Time Series (Daily)']
+  points = []
+  c = 0
+  for date in dayData:
+    if c < numPoints:
+      point = dayData[date]['2. high']
+      points.append(point)
+      c += 1
+    else:
+      break
+  return points

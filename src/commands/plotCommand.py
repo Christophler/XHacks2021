@@ -1,11 +1,11 @@
-import os
 import discord
-from plotting.matplotlib import plot, getPlotFile
+import os
+from plotting.matplotlib import getPlotFile
+from api.alphaVantage import getPoints
 
 class PlotCommand:
     def __init__(self, names, settings):
         self.names = names # list of command names ex: [tp, teleport]
-        self.points = settings.getAttribute("plot.points")
         self.xLabel = settings.getAttribute("plot.xLabel")
         self.yLabel = settings.getAttribute("plot.yLabel")
         self.fileName = settings.getAttribute("plot.temp_image_name")
@@ -17,9 +17,6 @@ class PlotCommand:
     # ;plot TSCO
     async def run(self, message, args): 
         if len(args) == 1:
-            # get reference to the local plot file 
-            file = await getPlotFile(self.points, self.xLabel, self.yLabel, self.fileName)
-            
             # get setting things
             desiredStock = None
             for stock in self.settings.getAttribute('stocks'):
@@ -29,6 +26,10 @@ class PlotCommand:
             
             title = desiredStock['name']
             thumbnail_url = desiredStock['image_url']
+            
+            # get reference to the local plot file 
+            pointsY = getPoints(5, title)
+            file = await getPlotFile([5, 4, 3, 2, 1], pointsY, self.xLabel, self.yLabel, self.fileName)
 
             # build the embed
             embed = discord.Embed(title=title.upper(), description="Stock Data found on " + title)
@@ -38,7 +39,7 @@ class PlotCommand:
             
             # send the embed
             await message.channel.send(file=file, content=message.author, embed=embed)
-            
+                    
             # remove the local file
             os.remove(self.fileName)
         else:

@@ -1,5 +1,6 @@
 
-from api.alphaVantage import timeSeriesDailyAdjusted
+from api.alphaVantage import getPoints
+from plotting.matplotlib import plot
 
 class TestCommand:
     def __init__(self, names, settings):
@@ -9,20 +10,14 @@ class TestCommand:
     def getNames(self):
         return self.names
         
-    async def run(self, message, args): 
-        if len(args) == 1:            
-            stockName = args[0]
-            json = timeSeriesDailyAdjusted(stockName)
-            dayData = json['Time Series (Daily)']
-            tempMax = 7
-            points = []
-            c = 0
-            for date in dayData:
-                if c > tempMax:
-                    break
-                c+= 1
-                point = dayData[date]['2. high']
-                points.append(point)
-            print(points)
+    async def run(self, message, args):        
+        stockName = "TSCO"
+        # points = getPoints(7, stockName)
+        if len(args) == 0: # ;test
+            await plot(message, 'x', 'y', [2, 4, 5, 6], 'plot1.png')
+        else: # ;test a
+            await plot(message, 'x', 'y', [4, 4, 5, 1], 'plot2.png')
+            
+            
             
         

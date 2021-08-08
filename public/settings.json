@@ -3,7 +3,6 @@
     "announce_channel_id": 843616163010314260,
     "ready_message": "Autobots, roll out",
     "plot": {
-        "points": [2, 4, 6, 7, 10],
         "temp_image_name": "plot123.png",
         "xLabel": "X Label",
         "yLabel": "Y Label"
