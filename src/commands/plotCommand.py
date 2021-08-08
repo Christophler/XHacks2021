@@ -1,6 +1,6 @@
 import os
 import discord
-from api.alphaVantage import timeSeriesDailyAdjusted, exchangeRates
+from api.alphaVantage import timeSeriesDailyAdjusted
 from plotting.matplotlib import plot
 
 class PlotCommand:

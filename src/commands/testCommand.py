@@ -1,5 +1,5 @@
 
-from api.alphaVantage import timeSeriesDailyAdjusted, exchangeRates
+from api.alphaVantage import timeSeriesDailyAdjusted
 
 class TestCommand:
     def __init__(self, names, settings):
