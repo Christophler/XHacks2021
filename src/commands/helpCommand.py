@@ -20,5 +20,5 @@ class HelpCommand:
         embed.add_field(name="Command Prefix", value=cmd_prefix)
         embed.add_field(name="Stock Command", value=(cmd_prefix + "stock <stock_name> - View the stock's progress in the last 7 days"))
         embed.add_field(name="Stocks Command", value=(cmd_prefix + "stocks - View the stocks you can see"))
-        embed.add_field(name="Use On Your Own Discord", value=("https://discord.com/api/oauth2/authorize?client_id=873654361438433300&permissions=8&scope=bot"))
+        embed.add_field(name="Use On Your Own Discord", value=("https://tinyurl.com/stockbot123xhacks"))
         await message.channel.send(embed=embed, content=("<@" + str(message.author.id) + ">"))
