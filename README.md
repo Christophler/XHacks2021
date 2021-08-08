@@ -1,6 +1,6 @@
 
-# About StockBot
-StockBot is a discord bot that lets users view recent stock data on a number of select stocks available. It neatly puts the data in a graph to see the stock's progress over the past 7 days. All with one bot and one command, you and your friends can view the stock market with ease.
+# About MoneyMoneyStocksBot
+MoneyMoneyStocksBot is a discord bot that lets users view recent stock data on a number of select stocks available. It neatly puts the data in a graph to see the stock's progress over the past 7 days. All with one bot and one command, you and your friends can view the stock market with ease.
 
 # Developers
 - Install python http request library: `pip install requests`
