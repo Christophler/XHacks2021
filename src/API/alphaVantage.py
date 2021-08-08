@@ -6,4 +6,5 @@ def timeSeriesDailyAdjusted(sym):
   r = requests.get(url)
   data = r.json()
 
-  print(data)
+  # print(data)
+  return data
