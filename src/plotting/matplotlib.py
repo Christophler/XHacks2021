@@ -12,7 +12,7 @@ async def plot(message, xLabel, yLabel, points, fname):
   plt.clf()
   os.remove(fname)
   
-async def getPlotFile(pointsX, pointsY, xLabel, yLabel, fileName):
+async def getPlotFile(pointsX, pointsY, xLabel, yLabel, fileName, name):
   print(pointsX)
   x = 0
   for i in pointsY:
@@ -25,6 +25,7 @@ async def getPlotFile(pointsX, pointsY, xLabel, yLabel, fileName):
   ymin = min(pointsY)
   xmax = max(pointsX)
   ymax = max(pointsY)
+  plt.title(name)
   plt.axis([xmin, xmax, ymin-(ymax-ymin)/10, ymax+(ymax-ymin)/10])
   plt.xlabel(xLabel)
   plt.ylabel(yLabel)
