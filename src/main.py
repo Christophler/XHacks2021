@@ -7,8 +7,7 @@ from settings import Settings
 from commands.plotCommand import PlotCommand
 from commands.testCommand import TestCommand
 
-from api.alphaVantage import timeSeriesDailyAdjusted
-
+from api.alphaVantage import timeSeriesDailyAdjusted, quotePrice
 
 # Importing the stay awake function
 # from stayWake.stay_awake import stay_awake
@@ -19,7 +18,7 @@ from api.alphaVantage import timeSeriesDailyAdjusted
 bot = discord.Client()
 
 settings = Settings()
-commands = [PlotCommand(['plot']), TestCommand(['test'], settings)]
+commands = [PlotCommand(['plot'], settings), TestCommand(['test'], settings)]
 
 # Showing that the bot is ready
 
@@ -37,6 +36,7 @@ async def on_message(message):
     if message.author == bot:
       return
     
+    # if the message begins with command prefix
     if len(message.content) > 0 and message.content[0] != settings.getAttribute("command_prefix"):
       return
     

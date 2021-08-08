@@ -9,4 +9,8 @@ class Settings:
         self.cache = data
     
     def getAttribute(self, id):
-        return self.cache[id]
+        look = self.cache
+        split = id.split('.')
+        for nest in split:
+            look = look[nest]
+        return look
