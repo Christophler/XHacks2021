@@ -18,5 +18,3 @@ async def getPlotFile(points, xLabel, yLabel, fileName):
   
   file = discord.File(fileName)
   return file
-  
-  
