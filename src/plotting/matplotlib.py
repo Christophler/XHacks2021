@@ -21,7 +21,11 @@ async def getPlotFile(pointsX, pointsY, xLabel, yLabel, fileName):
 
   print(pointsY)
   plt.plot(pointsX, pointsY)
-  plt.axis([1, 5, 180, 194])
+  xmin = min(pointsX)
+  ymin = min(pointsY)
+  xmax = max(pointsX)
+  ymax = max(pointsY)
+  plt.axis([xmin, xmax, ymin, ymax+(ymax-ymin)/10])
   plt.xlabel(xLabel)
   plt.ylabel(yLabel)
   plt.savefig(fname = fileName)
