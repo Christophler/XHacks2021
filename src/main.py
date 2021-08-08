@@ -7,9 +7,7 @@ from settings import Settings
 from commands.plotCommand import PlotCommand
 from commands.testCommand import TestCommand
 
-from api.alphaVantage import quotePrice
-
-quotePrice()
+from api.alphaVantage import timeSeriesDailyAdjusted
 
 
 # Importing the stay awake function
