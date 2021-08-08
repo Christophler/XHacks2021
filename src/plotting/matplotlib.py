@@ -14,9 +14,14 @@ async def plot(message, xLabel, yLabel, points, fname):
   
 async def getPlotFile(pointsX, pointsY, xLabel, yLabel, fileName):
   print(pointsX)
+  x = 0
+  for i in pointsY:
+    pointsY[x] = float(i)
+    x = x+1
+
   print(pointsY)
-  plt.axis([0, 7, 100, 200])
-  plt.plot(pointsX, pointsY, 'ro')
+  plt.plot(pointsX, pointsY)
+  plt.axis([1, 5, 180, 194])
   plt.xlabel(xLabel)
   plt.ylabel(yLabel)
   plt.savefig(fname = fileName)
