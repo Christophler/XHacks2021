@@ -28,8 +28,8 @@ class PlotCommand:
             thumbnail_url = desiredStock['image_url']
             
             # get reference to the local plot file 
-            pointsY = getPoints(5, title)
-            file = await getPlotFile([5, 4, 3, 2, 1], pointsY, self.xLabel, self.yLabel, self.fileName)
+            pointsY = getPoints(7, title)
+            file = await getPlotFile([0, 1, 2, 3, 4, 5, 6], pointsY, self.xLabel, self.yLabel, self.fileName)
 
             # build the embed
             embed = discord.Embed(title=title.upper(), description="Stock Data found on " + title)

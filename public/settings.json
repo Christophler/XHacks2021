@@ -4,8 +4,8 @@
     "ready_message": "Autobots, roll out",
     "plot": {
         "temp_image_name": "plot123.png",
-        "xLabel": "X Label",
-        "yLabel": "Y Label"
+        "xLabel": "Days after 1 week ago",
+        "yLabel": "Stock Price ($USD)"
     },
     "stocks": [
         {
