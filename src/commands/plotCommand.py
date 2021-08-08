@@ -35,7 +35,7 @@ class PlotCommand:
             embed = discord.Embed(title=title.upper(), description="Stock Data found on " + title)
             embed.set_image(url=("attachment://"+self.fileName))
             embed.set_thumbnail(url=thumbnail_url)
-            embed.set_author(name="XHacks2021", url="https://discord.com/api/oauth2/authorize?client_id=873654361438433300&permissions=8&scope=bot", icon_url="https://g.foolcdn.com/editorial/images/637254/stock-up-glowing-green-arrow-climbs-on-a-stock-screen.jpg")
+            embed.set_author(name="MoneyMoneyStocksBot", url="https://discord.com/api/oauth2/authorize?client_id=873654361438433300&permissions=8&scope=bot", icon_url="https://www.cnet.com/a/img/uaUy0yK-_-dwdVo_pzqVS3d48hI=/1200x630/2021/04/01/05b0b37a-2c25-4ea0-941c-c9db574e94e5/16br-stonks-motd-1920x1080-1920x1080-d7e1e18d423d.jpg")
             
             # send the embed
             await message.channel.send(file=file, content=("<@" + str(message.author.id) + ">"), embed=embed)

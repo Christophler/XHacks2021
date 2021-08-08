@@ -5,7 +5,6 @@ from settings import Settings
 
 # Commands
 from commands.plotCommand import PlotCommand
-from commands.testCommand import TestCommand
 from commands.helpCommand import HelpCommand
 from commands.stocksCommand import StocksCommand
 
@@ -20,7 +19,7 @@ from commands.stocksCommand import StocksCommand
 bot = discord.Client()
 
 settings = Settings()
-commands = [PlotCommand(['plot', 'stock'], settings), TestCommand(['test'], settings), HelpCommand(['help'], settings), StocksCommand(['stocks'], settings)]
+commands = [PlotCommand(['plot', 'stock'], settings), HelpCommand(['help'], settings), StocksCommand(['stocks'], settings)]
 
 # Showing that the bot is ready
 

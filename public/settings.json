@@ -1,7 +1,7 @@
 {
     "command_prefix": ";",
     "announce_channel_id": 843616163010314260,
-    "ready_message": "Autobots, roll out",
+    "ready_message": "It's time to make some money :money_mouth: Type ;help to start",
     "plot": {
         "temp_image_name": "plot123.png",
         "xLabel": "Days after 1 week ago",
