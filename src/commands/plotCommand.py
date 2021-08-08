@@ -38,7 +38,7 @@ class PlotCommand:
             embed.set_author(name="XHacks2021", url="https://discord.com/api/oauth2/authorize?client_id=873654361438433300&permissions=8&scope=bot", icon_url="https://g.foolcdn.com/editorial/images/637254/stock-up-glowing-green-arrow-climbs-on-a-stock-screen.jpg")
             
             # send the embed
-            await message.channel.send(file=file, content=message.author, embed=embed)
+            await message.channel.send(file=file, content=("<@" + str(message.author.id) + ">"), embed=embed)
                     
             # remove the local file
             os.remove(self.fileName)
